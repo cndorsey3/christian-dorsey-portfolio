@@ -3,6 +3,21 @@
 // for images that didn't come from a numbered scan. Edit freely.
 const FRAMES = [
   {
+    "file": "little-french-boy-rome.jpg",
+    "frame": "",
+    "caption": "Little French Boy Rome"
+  },
+  {
+    "file": "shout-charlie.jpg",
+    "frame": "",
+    "caption": "Shout Charlie"
+  },
+  {
+    "file": "beach-day.jpg",
+    "frame": "",
+    "caption": "Beach Day"
+  },
+  {
     "file": "24000016.jpg",
     "frame": "16",
     "caption": ""
@@ -213,11 +228,6 @@ const FRAMES = [
     "caption": "Lean Colosseum"
   },
   {
-    "file": "little-french-boy-rome.jpg",
-    "frame": "",
-    "caption": "Little French Boy Rome"
-  },
-  {
     "file": "love-charlie.jpg",
     "frame": "",
     "caption": "Love Charlie"
@@ -231,11 +241,6 @@ const FRAMES = [
     "file": "police-charlie.jpg",
     "frame": "",
     "caption": "Police Charlie"
-  },
-  {
-    "file": "shout-charlie.jpg",
-    "frame": "",
-    "caption": "Shout Charlie"
   },
   {
     "file": "street-light-perspective-rome.jpg",

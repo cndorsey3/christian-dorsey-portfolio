@@ -179,25 +179,14 @@ section { padding: 120px 48px; max-width: 1180px; margin: 0 auto; }
 .track-list { display: flex; flex-direction: column; }
 .track {
   display: grid;
-  grid-template-columns: 32px 1fr auto;
+  grid-template-columns: 32px 1fr;
   align-items: center;
   gap: 20px;
   padding: 20px 0;
   border-bottom: 1px solid var(--hair);
 }
 .track-idx { color: var(--sage); font-size: 13px; }
-.track-title { font-family: 'Fraunces', serif; font-size: 19px; }
-.track-sub { color: var(--paper-dim); font-size: 13px; margin-top: 4px; }
-.track-play {
-  width: 36px; height: 36px;
-  border: 1px solid var(--hair);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px;
-  color: var(--paper);
-  cursor: pointer;
-}
-.track-play:hover { border-color: var(--safelight); color: var(--safelight); }
+.track-embed iframe { display: block; }
 
 /* ABOUT / FOOTER */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
