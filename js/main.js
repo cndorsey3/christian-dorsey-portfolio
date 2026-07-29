@@ -530,6 +530,53 @@ FRAMES.forEach(f => {
   grid.appendChild(div);
 });
 
+// Lightbox — click a frame to view it large, with prev/next carousel nav.
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+let lightboxIndex = -1;
+
+function showLightboxFrame(index) {
+  lightboxIndex = index;
+  const f = FRAMES[lightboxIndex];
+  lightboxImg.src = `images/${f.file}`;
+  lightboxImg.alt = f.caption || (f.frame ? `Frame ${f.frame}` : '');
+}
+
+function openLightbox(index) {
+  showLightboxFrame(index);
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightboxIndex = -1;
+  document.body.style.overflow = '';
+}
+
+grid.addEventListener('click', (e) => {
+  if (e.target.closest('.frame-link')) return; // let the Instagram link behave normally
+  const frameEl = e.target.closest('.frame');
+  if (!frameEl) return;
+  openLightbox(Array.from(grid.children).indexOf(frameEl));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', () => showLightboxFrame((lightboxIndex - 1 + FRAMES.length) % FRAMES.length));
+lightboxNext.addEventListener('click', () => showLightboxFrame((lightboxIndex + 1) % FRAMES.length));
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+window.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft') lightboxPrev.click();
+  else if (e.key === 'ArrowRight') lightboxNext.click();
+});
+
 // Measure section offsets now that the grid has its real height, then
 // run the initial nav/parallax state.
 measureSections();
