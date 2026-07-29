@@ -468,6 +468,8 @@ for (let i = 0; i < 28; i++) {
 }
 
 // Populate contact sheet grid
+// Frames without their own post link fall back to the profile page.
+const INSTAGRAM_PROFILE = 'https://www.instagram.com/chino.byl/';
 const grid = document.getElementById('grid');
 FRAMES.forEach(f => {
   const div = document.createElement('div');
@@ -479,7 +481,7 @@ FRAMES.forEach(f => {
     <img src="images/${f.file}" alt="${f.caption || 'Frame ' + f.frame}" loading="lazy">
     <div class="frame-overlay">
       ${label}
-      <a class="frame-link" href="${f.instagram || '#'}" target="_blank" rel="noopener">View on Instagram &#8599;</a>
+      <a class="frame-link" href="${f.instagram || INSTAGRAM_PROFILE}" target="_blank" rel="noopener">View on Instagram &#8599;</a>
     </div>
   `;
   grid.appendChild(div);
