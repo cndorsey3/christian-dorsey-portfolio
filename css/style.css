@@ -59,9 +59,11 @@ nav a.active { color: var(--safelight); }
   will-change: transform;
 }
 .hero-bg-img {
-  /* Color grade is baked into images/hero/* at build time (see main.js) —
-     a live CSS filter here was costly for Firefox to recompute during the
-     parallax scroll transform. */
+  /* No filter here on purpose — this is a workaround for a Firefox-only
+     performance bug where a live grayscale/contrast/brightness filter
+     made scrolling past the header very slow (fine on Chrome/Safari).
+     The same look is baked into images/hero/* as real pixels instead;
+     see the "HOW TO ADD A NEW PHOTO" note in main.js. */
   position: absolute;
   inset: 0;
   background-size: cover;

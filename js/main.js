@@ -3,6 +3,46 @@
 // for images that didn't come from a numbered scan. Edit freely.
 // Add an "instagram" field with the post URL to link a frame's
 // "View on Instagram" overlay — frames without one just show "#".
+//
+// HOW TO ADD A NEW PHOTO
+// 1. Resize/compress the image to match the rest of the set — 1800px
+//    wide, JPEG quality ~80, which lands around 250-700KB. Example
+//    using Python + Pillow (`pip install pillow` if you don't have it):
+//
+//      python -c "
+//      from PIL import Image
+//      img = Image.open('path/to/original.jpg').convert('RGB')
+//      w, h = img.size
+//      img = img.resize((1800, round(h * 1800 / w)), Image.LANCZOS)
+//      img.save('images/your-file-name.jpg', 'JPEG', quality=80, optimize=True)
+//      "
+//
+// 2. Add an entry for it below with its filename, a 'frame' number
+//    (for numbered scans) or a 'caption' (for named shots), and an
+//    'instagram' post URL if you have one (leave "" if not).
+//
+// 3. This image can now be randomly picked for the hero background, so
+//    it also needs a graded copy in images/hero/ with the exact same
+//    filename. This step is a workaround for a Firefox-specific
+//    performance bug: applying grayscale/contrast/brightness as a live
+//    CSS filter was fine on Chrome/Safari but made Firefox scroll very
+//    slowly past the header, so the same look is pre-baked into the
+//    hero copy as actual pixels instead, and no filter is applied at
+//    runtime at all. Generate it with:
+//
+//      python -c "
+//      from PIL import Image, ImageEnhance, ImageOps
+//      img = Image.open('images/your-file-name.jpg').convert('RGB')
+//      gray = ImageOps.grayscale(img).convert('RGB')
+//      img = Image.blend(img, gray, 0.35)
+//      img = ImageEnhance.Contrast(img).enhance(1.05)
+//      img = ImageEnhance.Brightness(img).enhance(0.55)
+//      img.save('images/hero/your-file-name.jpg', 'JPEG', quality=82, optimize=True)
+//      "
+//
+//    (Skip this step and it'll just fall back to the ungraded original
+//    if it's ever picked for the hero — not broken, just inconsistent
+//    with the other hero shots.)
 const FRAMES = [
   {
     "file": "little-french-boy-rome.jpg",
