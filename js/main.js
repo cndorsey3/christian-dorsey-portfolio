@@ -427,10 +427,12 @@ function updateOnScroll() {
   nav.classList.toggle('nav-hidden', y > NAV_HIDE_THRESHOLD);
 
   const scrollPos = y + NAV_HIDE_THRESHOLD + 40;
+  const atBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 2;
   let activeIndex = -1;
   sectionOffsets.forEach((offset, i) => {
     if (offset <= scrollPos) activeIndex = i;
   });
+  if (atBottom) activeIndex = navLinks.length - 1;
   navLinks.forEach((a, i) => a.classList.toggle('active', i === activeIndex));
 }
 
