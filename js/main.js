@@ -400,7 +400,8 @@ const FRAMES = [
 const heroBg = document.getElementById('heroBg');
 const heroBgImg = document.getElementById('heroBgImg');
 const heroImage = FRAMES[Math.floor(Math.random() * FRAMES.length)].file;
-heroBgImg.style.backgroundImage = `url('images/${heroImage}')`;
+// Pre-graded (grayscale/contrast/brightness baked in) copy — see images/hero/
+heroBgImg.style.backgroundImage = `url('images/hero/${heroImage}')`;
 
 // Nav: translucent bar that hides on scroll and reappears near the top edge
 const nav = document.querySelector('nav');

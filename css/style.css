@@ -34,9 +34,7 @@ nav {
   align-items: center;
   padding: 28px 48px;
   z-index: 10;
-  background: rgba(20, 18, 15, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(20, 18, 15, 0.88);
   transform: translateY(0);
   transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
 }
@@ -61,11 +59,13 @@ nav a.active { color: var(--safelight); }
   will-change: transform;
 }
 .hero-bg-img {
+  /* Color grade is baked into images/hero/* at build time (see main.js) —
+     a live CSS filter here was costly for Firefox to recompute during the
+     parallax scroll transform. */
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: grayscale(0.35) contrast(1.05) brightness(0.55);
 }
 .hero-scrim {
   position: absolute;
