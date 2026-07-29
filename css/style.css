@@ -3,6 +3,7 @@
   --paper: #ede6d6;
   --paper-dim: #c9c1ae;
   --safelight: #b33a2a;
+  --safelight-light: #d97a68;
   --sage: #6b7268;
   --hair: rgba(237,230,214,0.16);
 }
@@ -43,6 +44,7 @@ nav .name { font-family: 'Fraunces', serif; font-size: 18px; }
 nav .links { display: flex; gap: 32px; font-size: 13px; letter-spacing: 0.04em; }
 nav a { color: var(--paper); text-decoration: none; transition: color 0.25s ease; }
 nav a.active { color: var(--safelight); }
+nav a:hover, nav a.active:hover { color: var(--safelight-light); }
 
 /* HERO - parallax */
 .hero {
