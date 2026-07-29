@@ -176,7 +176,10 @@ section { padding: 120px 48px; max-width: 1180px; margin: 0 auto; }
 .frame-link:hover { color: var(--safelight); }
 
 /* MUSIC SECTION */
-.track-list { display: flex; flex-direction: column; }
+/* Bandcamp's "large" embed has a fixed native width (~700px) and doesn't
+   stretch to fill a wider container, so the list is capped and centered
+   to that width instead of leaving dead space to the right of each embed. */
+.track-list { display: flex; flex-direction: column; max-width: 750px; margin: 0 auto; }
 .track {
   display: grid;
   grid-template-columns: 32px 1fr;
