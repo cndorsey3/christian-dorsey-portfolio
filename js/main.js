@@ -489,3 +489,12 @@ FRAMES.forEach(f => {
 // run the initial nav/parallax state.
 measureSections();
 updateOnScroll();
+
+// Contact email — built at runtime instead of sitting in the HTML as
+// plain text/mailto, so scrapers crawling the static markup don't pick it up.
+const emailUser = 'christian.dorsey3';
+const emailDomain = 'gmail.com';
+const emailLink = document.getElementById('emailLink');
+const emailAddress = `${emailUser}@${emailDomain}`;
+emailLink.href = `mailto:${emailAddress}`;
+emailLink.textContent = emailAddress;
