@@ -182,9 +182,10 @@ section { padding: 120px 48px; max-width: 1180px; margin: 0 auto; }
   grid-template-columns: 32px 1fr;
   align-items: center;
   gap: 20px;
-  padding: 20px 0;
+  padding: 8px 0;
   border-bottom: 1px solid var(--hair);
 }
+.track:first-child { padding-top: 0; }
 .track-idx { color: var(--sage); font-size: 13px; }
 .track-embed iframe { display: block; }
 

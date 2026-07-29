@@ -1,256 +1,398 @@
 // Contact sheet frames — pulled from your Pictures folder.
 // 'frame' is the real scan number where available; 'caption' is used
 // for images that didn't come from a numbered scan. Edit freely.
+// Add an "instagram" field with the post URL to link a frame's
+// "View on Instagram" overlay — frames without one just show "#".
 const FRAMES = [
   {
     "file": "little-french-boy-rome.jpg",
     "frame": "",
-    "caption": "Little French Boy Rome"
+    "caption": "Little French Boy Rome",
+    "instagram": "https://www.instagram.com/p/C7kQsoyva_j/"
   },
   {
     "file": "shout-charlie.jpg",
     "frame": "",
-    "caption": "Shout Charlie"
+    "caption": "Shout Charlie",
+    "instagram": "https://www.instagram.com/p/C7kKHFtvBvQ/"
   },
   {
     "file": "beach-day.jpg",
     "frame": "",
-    "caption": "Beach Day"
+    "caption": "Beach Day",
+    "instagram": "https://www.instagram.com/p/DDKjJjmPMLb/"
   },
   {
     "file": "24000016.jpg",
     "frame": "16",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DT1lb6CDWZZ/"
   },
   {
     "file": "24030009.jpg",
     "frame": "09",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DT1oYqNjfnz/?img_index=1"
   },
   {
     "file": "30600036.jpg",
     "frame": "36",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8Tesl9OCF-/"
   },
   {
     "file": "30620013.jpg",
     "frame": "13",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C9YNFrVvPnr/"
   },
   {
     "file": "30620015.jpg",
     "frame": "15",
-    "caption": ""
+    "caption": "",
+    "instagram": ""
   },
   {
     "file": "30620018.jpg",
     "frame": "18",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C7mc6pFOs9p/"
   },
   {
     "file": "30620028.jpg",
     "frame": "28",
-    "caption": ""
+    "caption": "",
+    "instagram": ""
   },
   {
     "file": "30620029.jpg",
     "frame": "29",
-    "caption": ""
+    "caption": "",
+    "instagram": ""
   },
   {
     "file": "30640024.jpg",
     "frame": "24",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C7qEsU_tJfG/"
   },
   {
     "file": "30650022.jpg",
     "frame": "22",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C7qnGjFOGum/"
   },
   {
     "file": "38000003.jpg",
     "frame": "03",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8Fm9VGPLnb/"
   },
   {
     "file": "38000009.jpg",
     "frame": "09",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8FlgWtvN0A/"
   },
   {
     "file": "38000010.jpg",
     "frame": "10",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8xKWUFuFwB/"
   },
   {
     "file": "38000011.jpg",
     "frame": "11",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8Fl_asPrhw/"
   },
   {
     "file": "38000016.jpg",
     "frame": "16",
-    "caption": ""
+    "caption": "",
+    "instagram": ""
   },
   {
     "file": "38000031.jpg",
     "frame": "31",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8Fm2Q0vsWj/"
   },
   {
     "file": "38000032.jpg",
     "frame": "32",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8Fl3LdvILw/"
   },
   {
     "file": "38000034.jpg",
     "frame": "34",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8Ga-4Ityuk/"
   },
   {
     "file": "38000035.jpg",
     "frame": "35",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8Gaswbt2Z5/"
   },
   {
     "file": "40910003.jpg",
     "frame": "03",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8XjPtGPblV/"
   },
   {
     "file": "40910011.jpg",
     "frame": "11",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8XeGG0vQ92/"
   },
   {
     "file": "40910030.jpg",
     "frame": "30",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C8XdQsYvP_i/"
   },
   {
     "file": "59910004.jpg",
     "frame": "04",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C9vaWx9vTcn/?img_index=1"
   },
   {
     "file": "59910013.jpg",
     "frame": "13",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C9vY-0OvTfI/"
   },
   {
     "file": "59920030.jpg",
     "frame": "30",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C9vZlQbP75d/?img_index=1"
   },
   {
     "file": "64550018.jpg",
     "frame": "18",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C-GFcdju0SK/?img_index=1"
   },
   {
     "file": "64550024.jpg",
     "frame": "24",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C-GGOoburBw/?img_index=1"
   },
   {
     "file": "67390011.jpg",
     "frame": "11",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C-V0DEsP9H3/?img_index=1"
   },
   {
     "file": "67390015.jpg",
     "frame": "15",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C-VyZSQPU2e/?img_index=1"
   },
   {
     "file": "75110012.jpg",
     "frame": "12",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DYAxEYbjyRM/"
   },
   {
     "file": "75130010.jpg",
     "frame": "10",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DYAvA8bjyXx/"
   },
   {
     "file": "7849215224-r1-011.jpg",
     "frame": "24",
-    "caption": ""
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DLWiREnsqOS/"
   },
   {
     "file": "coyoacan-buggy.jpg",
     "frame": "",
-    "caption": "Coyoacan Buggy"
+    "caption": "Coyoacan Buggy",
+    "instagram": "https://www.instagram.com/p/DLWh83MMDUM/?img_index=1"
   },
   {
     "file": "arch-girl.jpg",
     "frame": "",
-    "caption": "Arch Girl"
+    "caption": "Arch Girl",
+    "instagram": "https://www.instagram.com/p/C7kIC63vs_W/"
   },
   {
     "file": "bird-dog.jpg",
     "frame": "",
-    "caption": "Bird Dog"
+    "caption": "Bird Dog",
+    "instagram": "https://www.instagram.com/p/C7kHjM_vIlh/"
   },
   {
     "file": "bottle-view-berlin.jpg",
     "frame": "",
-    "caption": "Bottle View Berlin"
+    "caption": "Bottle View Berlin",
+    "instagram": "https://www.instagram.com/p/C7qnK_Au76t/"
   },
   {
     "file": "buggy-rome.jpg",
     "frame": "",
-    "caption": "Buggy Rome"
+    "caption": "Buggy Rome",
+    "instagram": "https://www.instagram.com/p/C7mcq7Guc9f/"
   },
   {
     "file": "fight-charlie.jpg",
     "frame": "",
-    "caption": "Fight Charlie"
+    "caption": "Fight Charlie",
+    "instagram": "https://www.instagram.com/p/C7kIli1Pvsk/"
   },
   {
     "file": "free-way.jpg",
     "frame": "",
-    "caption": "Free Way"
+    "caption": "Free Way",
+    "instagram": "https://www.instagram.com/p/C7kN63mvw7H/"
   },
   {
     "file": "hunt-rome.jpg",
     "frame": "",
-    "caption": "Hunt Rome"
+    "caption": "Hunt Rome",
+    "instagram": "https://www.instagram.com/p/C7qnOuduya9/"
   },
   {
     "file": "join-charlie.jpg",
     "frame": "",
-    "caption": "Join Charlie"
+    "caption": "Join Charlie",
+    "instagram": "https://www.instagram.com/p/C7kLgKHvaTp/"
   },
   {
     "file": "lean-colosseum.jpg",
     "frame": "",
-    "caption": "Lean Colosseum"
+    "caption": "Lean Colosseum",
+    "instagram": "https://www.instagram.com/p/C7mcm8POEpT/"
   },
   {
     "file": "love-charlie.jpg",
     "frame": "",
-    "caption": "Love Charlie"
+    "caption": "Love Charlie",
+    "instagram": "https://www.instagram.com/p/C7kOJUQvEYw/"
   },
   {
     "file": "pace-rome.jpg",
     "frame": "",
-    "caption": "Pace Rome"
+    "caption": "Pace Rome",
+    "instagram": "https://www.instagram.com/p/C7kQwoaPjqW/"
   },
   {
     "file": "police-charlie.jpg",
     "frame": "",
-    "caption": "Police Charlie"
+    "caption": "Police Charlie",
+    "instagram": "https://www.instagram.com/p/C7lDETCuRct/"
   },
   {
     "file": "street-light-perspective-rome.jpg",
     "frame": "",
-    "caption": "Street Light Perspective Rome"
+    "caption": "Street Light Perspective Rome",
+    "instagram": "https://www.instagram.com/p/C7kQiDnvoFH/"
   },
   {
     "file": "three-black-hats.jpg",
     "frame": "",
-    "caption": "Three Black Hats"
+    "caption": "Three Black Hats",
+    "instagram": "https://www.instagram.com/p/C7kNWq7vGaY/"
+  },
+  {
+    "file": "08550016.jpg",
+    "frame": "16",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C5mDxPgvpBS/"
+  },
+  {
+    "file": "08570008.jpg",
+    "frame": "08",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C5S7MBcuId-/?img_index=7"
+  },
+  {
+    "file": "08570017.jpg",
+    "frame": "17",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C5S_Ze3uKRj/?img_index=3"
+  },
+  {
+    "file": "08570020.jpg",
+    "frame": "20",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C5S7MBcuId-/?img_index=5"
+  },
+  {
+    "file": "09580002.jpg",
+    "frame": "02",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C5mBJuFPAYo/?img_index=1"
+  },
+  {
+    "file": "09580016.jpg",
+    "frame": "16",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C5YtMIzu_H-/"
+  },
+  {
+    "file": "10850006.jpg",
+    "frame": "06",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C5jK8ufOrlx/?img_index=1"
+  },
+  {
+    "file": "11630029.jpg",
+    "frame": "29",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C5onMD9vxR4/"
+  },
+  {
+    "file": "11630036.jpg",
+    "frame": "36",
+    "caption": "",
+    "instagram": ""
+  },
+  {
+    "file": "000043640001.jpg",
+    "frame": "01",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DDKjpZsPzRJ/?img_index=1"
+  },
+  {
+    "file": "18200004.jpg",
+    "frame": "04",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DAoU2hMv5rl/?img_index=1"
+  },
+  {
+    "file": "72360017.jpg",
+    "frame": "17",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/C-vMf9FuE1-/"
+  },
+  {
+    "file": "6609213924-R1-011.jpg",
+    "frame": "11",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DHuL0ZTvOz5/?img_index=1"
+  },
+  {
+    "file": "6609213924-R1-024.jpg",
+    "frame": "24",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DHujXP8NZ1P/"
+  },
+  {
+    "file": "6610213925-R1-025.jpg",
+    "frame": "25",
+    "caption": "",
+    "instagram": "https://www.instagram.com/p/DHuKWsOvGT1/"
   }
 ];
 
@@ -326,7 +468,6 @@ for (let i = 0; i < 28; i++) {
 }
 
 // Populate contact sheet grid
-// Replace each frame's 'href' below with the matching Instagram post URL
 const grid = document.getElementById('grid');
 FRAMES.forEach(f => {
   const div = document.createElement('div');
@@ -338,7 +479,7 @@ FRAMES.forEach(f => {
     <img src="images/${f.file}" alt="${f.caption || 'Frame ' + f.frame}" loading="lazy">
     <div class="frame-overlay">
       ${label}
-      <a class="frame-link" href="#" target="_blank" rel="noopener">View on Instagram &#8599;</a>
+      <a class="frame-link" href="${f.instagram || '#'}" target="_blank" rel="noopener">View on Instagram &#8599;</a>
     </div>
   `;
   grid.appendChild(div);
