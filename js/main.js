@@ -612,6 +612,22 @@ window.addEventListener('keydown', (e) => {
   else if (e.key === 'ArrowRight') lightboxNext.click();
 });
 
+// Swipe left/right to move through the carousel on touch devices.
+const SWIPE_THRESHOLD = 50;
+let touchStartX = 0;
+let touchStartY = 0;
+lightbox.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].clientX;
+  touchStartY = e.changedTouches[0].clientY;
+}, { passive: true });
+lightbox.addEventListener('touchend', (e) => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
+  if (dx < 0) lightboxNext.click();
+  else lightboxPrev.click();
+}, { passive: true });
+
 // Deter casual right-click/drag saving of photos. Not real protection —
 // view-source, dev tools, and screenshots all still work regardless.
 document.addEventListener('contextmenu', (e) => {

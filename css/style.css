@@ -250,6 +250,9 @@ footer a { color: var(--paper); text-decoration: none; }
   color: var(--paper);
   cursor: pointer;
   transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .lightbox-close:hover,
 .lightbox-nav:hover { color: var(--safelight-light); }
@@ -258,6 +261,7 @@ footer a { color: var(--paper); text-decoration: none; }
   right: 48px;
   font-size: 32px;
   line-height: 1;
+  padding: 8px;
 }
 .lightbox-nav {
   top: 50%;
@@ -270,8 +274,10 @@ footer a { color: var(--paper); text-decoration: none; }
 .lightbox-next { right: 12px; }
 
 @media (max-width: 720px) {
-  .lightbox-close { top: 16px; right: 20px; font-size: 26px; }
-  .lightbox-nav { font-size: 34px; padding: 10px 12px; }
+  /* Bigger tap targets than the glyph size alone would give — comfortably
+     above the ~44px minimum recommended touch target. */
+  .lightbox-close { top: 12px; right: 12px; font-size: 26px; padding: 16px; }
+  .lightbox-nav { font-size: 30px; padding: 20px 18px; }
 }
 
 @media (max-width: 900px) {
