@@ -25,6 +25,13 @@ h1, h2, .display {
   text-transform: uppercase;
   color: var(--sage);
 }
+/* Swap "hover" copy for "tap" below the touch-friendly breakpoint —
+   see .frame-overlay for the matching functional change. */
+.eyebrow .tap-hint { display: none; }
+@media (max-width: 720px) {
+  .eyebrow .hover-hint { display: none; }
+  .eyebrow .tap-hint { display: inline; }
+}
 
 /* NAV */
 nav {
@@ -272,12 +279,38 @@ footer a { color: var(--paper); text-decoration: none; }
 }
 .lightbox-prev { left: 12px; }
 .lightbox-next { right: 12px; }
+.lightbox-info {
+  position: absolute;
+  top: 28px;
+  left: 48px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--safelight);
+}
+.lightbox-info.is-caption { color: var(--paper-dim); letter-spacing: 0.02em; }
+.lightbox-instagram {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--paper);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.lightbox-instagram:hover { color: var(--safelight-light); }
 
 @media (max-width: 720px) {
   /* Bigger tap targets than the glyph size alone would give — comfortably
      above the ~44px minimum recommended touch target. */
   .lightbox-close { top: 12px; right: 12px; font-size: 26px; padding: 16px; }
   .lightbox-nav { font-size: 30px; padding: 20px 18px; }
+  .lightbox-info { top: 16px; left: 20px; }
+  .lightbox-instagram { bottom: 14px; font-size: 12px; }
 }
 
 @media (max-width: 900px) {

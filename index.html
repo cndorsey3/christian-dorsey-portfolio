@@ -35,7 +35,10 @@
   <div class="sprocket-strip" id="sprockets"></div>
   <div class="section-head">
     <h2>Contact sheet</h2>
-    <div class="eyebrow">Selected frames — hover to view on Instagram</div>
+    <div class="eyebrow">
+      <span class="hover-hint">Selected frames — hover to view on Instagram</span>
+      <span class="tap-hint">Selected frames — tap to view on Instagram</span>
+    </div>
   </div>
   <div class="contact-sheet" id="grid"></div>
 </section>
@@ -111,6 +114,8 @@
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
   <img class="lightbox-img" id="lightboxImg" src="" alt="">
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+  <div class="lightbox-info" id="lightboxInfo"></div>
+  <a class="lightbox-instagram" id="lightboxInstagram" href="#" target="_blank" rel="noopener">View on Instagram &#8599;</a>
 </div>
 
 <script src="js/main.js"></script>

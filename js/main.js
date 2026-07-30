@@ -565,6 +565,8 @@ const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
 const lightboxPrev = document.getElementById('lightboxPrev');
 const lightboxNext = document.getElementById('lightboxNext');
+const lightboxInfo = document.getElementById('lightboxInfo');
+const lightboxInstagram = document.getElementById('lightboxInstagram');
 let lightboxIndex = -1;
 
 function showLightboxFrame(index) {
@@ -578,6 +580,13 @@ function showLightboxFrame(index) {
   };
   lightboxImg.src = `images/watermarked/${f.file}`;
   lightboxImg.alt = f.caption || (f.frame ? `Frame ${f.frame}` : '');
+
+  // Frame number/caption and the Instagram link live here instead of on
+  // the grid tile — on touch devices there's no hover to reveal them, so
+  // opening the lightbox is the one interaction that always works.
+  lightboxInfo.textContent = f.caption || (f.frame ? `#${f.frame}` : '');
+  lightboxInfo.classList.toggle('is-caption', !!f.caption);
+  lightboxInstagram.href = f.instagram || INSTAGRAM_PROFILE;
 }
 
 function openLightbox(index) {
