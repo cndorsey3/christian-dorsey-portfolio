@@ -43,6 +43,31 @@
 //    (Skip this step and it'll just fall back to the ungraded original
 //    if it's ever picked for the hero — not broken, just inconsistent
 //    with the other hero shots.)
+//
+// 4. The lightbox shows a "@chino.byl — #NN" (or caption) watermark baked
+//    into the actual pixels as a mild deterrent against casual saving —
+//    it survives screenshots and "Save Image As" alike, unlike a CSS
+//    overlay. It needs a copy in images/watermarked/ with the same
+//    filename. Generate it with (swap in the caption instead of the
+//    frame number for named shots):
+//
+//      python -c "
+//      from PIL import Image, ImageDraw, ImageFont
+//      text = '@chino.byl \u2014 #NN'
+//      font = ImageFont.truetype(r'C:\Windows\Fonts\arial.ttf', 34)
+//      img = Image.open('images/your-file-name.jpg').convert('RGB')
+//      draw = ImageDraw.Draw(img, 'RGBA')
+//      pad_x, pad_y, margin = 16, 10, 20
+//      bbox = draw.textbbox((0, 0), text, font=font)
+//      w, h = bbox[2]-bbox[0], bbox[3]-bbox[1]
+//      x0, y0 = margin, img.height - margin - h - pad_y*2
+//      draw.rectangle([x0, y0, x0+w+pad_x*2, y0+h+pad_y*2], fill=(20,18,15,130))
+//      draw.text((x0+pad_x-bbox[0], y0+pad_y-bbox[1]), text, font=font, fill=(237,230,214,235))
+//      img.save('images/watermarked/your-file-name.jpg', 'JPEG', quality=85, optimize=True)
+//      "
+//
+//    (Skip this step and the lightbox just falls back to the plain,
+//    unwatermarked original for that photo — not broken, just uncovered.)
 const FRAMES = [
   {
     "file": "little-french-boy-rome.jpg",
@@ -64,193 +89,193 @@ const FRAMES = [
   },
   {
     "file": "24000016.jpg",
-    "frame": "16",
+    "frame": "04",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DT1lb6CDWZZ/"
   },
   {
     "file": "24030009.jpg",
-    "frame": "09",
+    "frame": "05",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DT1oYqNjfnz/?img_index=1"
   },
   {
     "file": "30600036.jpg",
-    "frame": "36",
+    "frame": "06",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8Tesl9OCF-/"
   },
   {
     "file": "30620013.jpg",
-    "frame": "13",
+    "frame": "07",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C9YNFrVvPnr/"
   },
   {
     "file": "30620015.jpg",
-    "frame": "15",
+    "frame": "08",
     "caption": "",
     "instagram": ""
   },
   {
     "file": "30620018.jpg",
-    "frame": "18",
+    "frame": "09",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C7mc6pFOs9p/"
   },
   {
     "file": "30620028.jpg",
-    "frame": "28",
+    "frame": "10",
     "caption": "",
     "instagram": ""
   },
   {
     "file": "30620029.jpg",
-    "frame": "29",
+    "frame": "11",
     "caption": "",
     "instagram": ""
   },
   {
     "file": "30640024.jpg",
-    "frame": "24",
+    "frame": "12",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C7qEsU_tJfG/"
   },
   {
     "file": "30650022.jpg",
-    "frame": "22",
+    "frame": "13",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C7qnGjFOGum/"
   },
   {
     "file": "38000003.jpg",
-    "frame": "03",
+    "frame": "14",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8Fm9VGPLnb/"
   },
   {
     "file": "38000009.jpg",
-    "frame": "09",
+    "frame": "15",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8FlgWtvN0A/"
   },
   {
     "file": "38000010.jpg",
-    "frame": "10",
+    "frame": "16",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8xKWUFuFwB/"
   },
   {
     "file": "38000011.jpg",
-    "frame": "11",
+    "frame": "17",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8Fl_asPrhw/"
   },
   {
     "file": "38000016.jpg",
-    "frame": "16",
+    "frame": "18",
     "caption": "",
     "instagram": ""
   },
   {
     "file": "38000031.jpg",
-    "frame": "31",
+    "frame": "19",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8Fm2Q0vsWj/"
   },
   {
     "file": "38000032.jpg",
-    "frame": "32",
+    "frame": "20",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8Fl3LdvILw/"
   },
   {
     "file": "38000034.jpg",
-    "frame": "34",
+    "frame": "21",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8Ga-4Ityuk/"
   },
   {
     "file": "38000035.jpg",
-    "frame": "35",
+    "frame": "22",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8Gaswbt2Z5/"
   },
   {
     "file": "40910003.jpg",
-    "frame": "03",
+    "frame": "23",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8XjPtGPblV/"
   },
   {
     "file": "40910011.jpg",
-    "frame": "11",
+    "frame": "24",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8XeGG0vQ92/"
   },
   {
     "file": "40910030.jpg",
-    "frame": "30",
+    "frame": "25",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C8XdQsYvP_i/"
   },
   {
     "file": "59910004.jpg",
-    "frame": "04",
+    "frame": "26",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C9vaWx9vTcn/?img_index=1"
   },
   {
     "file": "59910013.jpg",
-    "frame": "13",
+    "frame": "27",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C9vY-0OvTfI/"
   },
   {
     "file": "59920030.jpg",
-    "frame": "30",
+    "frame": "28",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C9vZlQbP75d/?img_index=1"
   },
   {
     "file": "64550018.jpg",
-    "frame": "18",
+    "frame": "29",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C-GFcdju0SK/?img_index=1"
   },
   {
     "file": "64550024.jpg",
-    "frame": "24",
+    "frame": "30",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C-GGOoburBw/?img_index=1"
   },
   {
     "file": "67390011.jpg",
-    "frame": "11",
+    "frame": "31",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C-V0DEsP9H3/?img_index=1"
   },
   {
     "file": "67390015.jpg",
-    "frame": "15",
+    "frame": "32",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C-VyZSQPU2e/?img_index=1"
   },
   {
     "file": "75110012.jpg",
-    "frame": "12",
+    "frame": "33",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DYAxEYbjyRM/"
   },
   {
     "file": "75130010.jpg",
-    "frame": "10",
+    "frame": "34",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DYAvA8bjyXx/"
   },
   {
     "file": "7849215224-r1-011.jpg",
-    "frame": "24",
+    "frame": "35",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DLWiREnsqOS/"
   },
@@ -346,91 +371,91 @@ const FRAMES = [
   },
   {
     "file": "08550016.jpg",
-    "frame": "16",
+    "frame": "51",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C5mDxPgvpBS/"
   },
   {
     "file": "08570008.jpg",
-    "frame": "08",
+    "frame": "52",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C5S7MBcuId-/?img_index=7"
   },
   {
     "file": "08570017.jpg",
-    "frame": "17",
+    "frame": "53",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C5S_Ze3uKRj/?img_index=3"
   },
   {
     "file": "08570020.jpg",
-    "frame": "20",
+    "frame": "54",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C5S7MBcuId-/?img_index=5"
   },
   {
     "file": "09580002.jpg",
-    "frame": "02",
+    "frame": "55",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C5mBJuFPAYo/?img_index=1"
   },
   {
     "file": "09580016.jpg",
-    "frame": "16",
+    "frame": "56",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C5YtMIzu_H-/"
   },
   {
     "file": "10850006.jpg",
-    "frame": "06",
+    "frame": "57",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C5jK8ufOrlx/?img_index=1"
   },
   {
     "file": "11630029.jpg",
-    "frame": "29",
+    "frame": "58",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C5onMD9vxR4/"
   },
   {
     "file": "11630036.jpg",
-    "frame": "36",
+    "frame": "59",
     "caption": "",
     "instagram": ""
   },
   {
     "file": "000043640001.jpg",
-    "frame": "01",
+    "frame": "60",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DDKjpZsPzRJ/?img_index=1"
   },
   {
     "file": "18200004.jpg",
-    "frame": "04",
+    "frame": "61",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DAoU2hMv5rl/?img_index=1"
   },
   {
     "file": "72360017.jpg",
-    "frame": "17",
+    "frame": "62",
     "caption": "",
     "instagram": "https://www.instagram.com/p/C-vMf9FuE1-/"
   },
   {
     "file": "6609213924-R1-011.jpg",
-    "frame": "11",
+    "frame": "63",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DHuL0ZTvOz5/?img_index=1"
   },
   {
     "file": "6609213924-R1-024.jpg",
-    "frame": "24",
+    "frame": "64",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DHujXP8NZ1P/"
   },
   {
     "file": "6610213925-R1-025.jpg",
-    "frame": "25",
+    "frame": "65",
     "caption": "",
     "instagram": "https://www.instagram.com/p/DHuKWsOvGT1/"
   }
@@ -531,6 +556,10 @@ FRAMES.forEach(f => {
 });
 
 // Lightbox — click a frame to view it large, with prev/next carousel nav.
+// Uses images/watermarked/ instead of images/ — those copies have the
+// "@chino.byl — #NN" mark baked into the actual pixels (see the
+// "HOW TO ADD A NEW PHOTO" note above), so it's still there no matter
+// how someone saves or screenshots the enlarged view.
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
@@ -541,7 +570,13 @@ let lightboxIndex = -1;
 function showLightboxFrame(index) {
   lightboxIndex = index;
   const f = FRAMES[lightboxIndex];
-  lightboxImg.src = `images/${f.file}`;
+  // Falls back to the plain (unwatermarked) original if a watermarked
+  // copy is ever missing, rather than showing a broken image.
+  lightboxImg.onerror = () => {
+    lightboxImg.onerror = null;
+    lightboxImg.src = `images/${f.file}`;
+  };
+  lightboxImg.src = `images/watermarked/${f.file}`;
   lightboxImg.alt = f.caption || (f.frame ? `Frame ${f.frame}` : '');
 }
 
@@ -575,6 +610,15 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
   else if (e.key === 'ArrowLeft') lightboxPrev.click();
   else if (e.key === 'ArrowRight') lightboxNext.click();
+});
+
+// Deter casual right-click/drag saving of photos. Not real protection —
+// view-source, dev tools, and screenshots all still work regardless.
+document.addEventListener('contextmenu', (e) => {
+  if (e.target.matches('.frame img, .lightbox-img')) e.preventDefault();
+});
+document.addEventListener('dragstart', (e) => {
+  if (e.target.matches('.frame img, .lightbox-img')) e.preventDefault();
 });
 
 // Measure section offsets now that the grid has its real height, then
