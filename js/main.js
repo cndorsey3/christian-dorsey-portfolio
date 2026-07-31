@@ -651,6 +651,16 @@ document.addEventListener('dragstart', (e) => {
 measureSections();
 updateOnScroll();
 
+// Story section — expand/collapse the full StoryCorps transcript
+const storyToggle = document.getElementById('storyToggle');
+const storyFull = document.getElementById('storyFull');
+storyToggle.addEventListener('click', () => {
+  const expanded = storyToggle.getAttribute('aria-expanded') === 'true';
+  storyToggle.setAttribute('aria-expanded', String(!expanded));
+  storyFull.hidden = expanded;
+  storyToggle.innerHTML = expanded ? 'Read full transcript &#8595;' : 'Hide full transcript &#8593;';
+});
+
 // Contact email — built at runtime instead of sitting in the HTML as
 // plain text/mailto, so scrapers crawling the static markup don't pick it up.
 const emailUser = 'christian.dorsey3';

@@ -212,6 +212,45 @@ section { padding: 120px 48px; max-width: 1180px; margin: 0 auto; }
 .track-idx { color: var(--sage); font-size: 13px; }
 .track-embed iframe { display: block; }
 
+/* STORY */
+.story-intro { max-width: 700px; margin: 0 auto 40px; color: var(--paper-dim); font-size: 15px; line-height: 1.7; }
+.story-audio { max-width: 720px; margin: 0 auto; border: 1px solid var(--hair); background: var(--ink); padding: 4px; }
+.story-audio iframe { display: block; width: 100%; aspect-ratio: 720 / 427; height: auto; border: 0; }
+.story-archive-link { display: block; max-width: 720px; margin: 16px auto 0; text-align: center; font-size: 13px; color: var(--paper); text-decoration: none; }
+.story-archive-link:hover { color: var(--safelight); }
+
+.story-transcript { max-width: 700px; margin: 64px auto 0; border-top: 1px solid var(--hair); padding-top: 40px; }
+.story-transcript h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 20px; margin-bottom: 20px; }
+.story-excerpt p { color: var(--paper-dim); font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
+.story-speaker { color: var(--safelight); font-weight: 500; }
+.story-toggle {
+  margin-top: 8px;
+  background: none;
+  border: 1px solid var(--hair);
+  color: var(--paper);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+.story-toggle:hover { border-color: var(--safelight); color: var(--safelight); }
+.story-full {
+  margin-top: 32px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 16px;
+  border-top: 1px solid var(--hair);
+  padding-top: 24px;
+}
+.story-full p { color: var(--paper-dim); font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+.story-time { color: var(--sage); font-size: 12px; margin-right: 6px; }
+.story-disclaimer { font-size: 12px; color: var(--sage); font-style: italic; margin-bottom: 24px; }
+.story-copyright { font-size: 12px; color: var(--sage); margin-top: 24px; }
+.story-pdf-link { display: inline-block; margin-top: 24px; font-size: 13px; color: var(--paper); text-decoration: none; }
+.story-pdf-link:hover { color: var(--safelight); }
+
 /* ABOUT / FOOTER */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .about-grid p { color: var(--paper-dim); line-height: 1.75; font-size: 15px; margin-bottom: 16px; }
