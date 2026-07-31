@@ -248,7 +248,8 @@ section { padding: 120px 48px; max-width: 1180px; margin: 0 auto; }
 .story-time { color: var(--sage); font-size: 12px; margin-right: 6px; }
 .story-disclaimer { font-size: 12px; color: var(--sage); font-style: italic; margin-bottom: 24px; }
 .story-copyright { font-size: 12px; color: var(--sage); margin-top: 24px; }
-.story-pdf-link { display: inline-block; margin-top: 24px; font-size: 13px; color: var(--paper); text-decoration: none; }
+.story-pdf-link { display: block; margin-top: 12px; font-size: 13px; color: var(--paper); text-decoration: none; }
+.story-pdf-link[hidden] { display: none; }
 .story-pdf-link:hover { color: var(--safelight); }
 
 /* ABOUT / FOOTER */

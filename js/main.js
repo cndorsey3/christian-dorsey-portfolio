@@ -654,10 +654,12 @@ updateOnScroll();
 // Story section — expand/collapse the full StoryCorps transcript
 const storyToggle = document.getElementById('storyToggle');
 const storyFull = document.getElementById('storyFull');
+const storyPdfLink = document.getElementById('storyPdfLink');
 storyToggle.addEventListener('click', () => {
   const expanded = storyToggle.getAttribute('aria-expanded') === 'true';
   storyToggle.setAttribute('aria-expanded', String(!expanded));
   storyFull.hidden = expanded;
+  storyPdfLink.hidden = expanded;
   storyToggle.innerHTML = expanded ? 'Read full transcript &#8595;' : 'Hide full transcript &#8593;';
 });
 
